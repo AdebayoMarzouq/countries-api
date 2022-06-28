@@ -39,15 +39,15 @@ const Detail = () => {
   }
 
   return (
-    <section className='md:mb-0 pb-14 md:pb-0'>
-      <div className='lock space-y-16 md:mb-0 bg-light-bg dark:bg-dark-bg pt-12 md:pt-16'>
+    <section className='md:mb-0 pb-14 md:pb-0 mt-12 md:mt-16'>
+      <div className='lock space-y-16 md:mb-0'>
         <div className='w-32'>
           <Button title='Back' />
         </div>
 
-        <div className='xl:grid xl:grid-cols-2'>
-          <div className='mb-10 md:mb-0 md:max-w-lg md:mr-auto xl:mx-0 relative'>
-            <img src={aflag} alt={aname} className='lg:h-full' />
+        <div className='xl:grid xl:grid-cols-5'>
+          <div className='mb-10 md:mb-0 md:max-w-lg xl:mx-0 relative lg:h-full xl:col-span-2'>
+            <img src={aflag} alt={aname} className='lg:h-full object-cover' />
             {carms && (
               <img
                 src={carms}
@@ -56,7 +56,7 @@ const Detail = () => {
               />
             )}
           </div>
-          <div className='flex flex-col space-y-8 md:grid md:grid-cols-2 md:my-16'>
+          <div className='flex flex-col space-y-8 md:grid md:grid-cols-2 xl:col-span-3 md:my-8 xl:ml-12'>
             <div className='col-span-2'>
               <h1 className='font-bold text-xl'>{aname}</h1>
             </div>
@@ -101,12 +101,14 @@ const Detail = () => {
               </p>
             </div>
             <div className='space-y-3 md:space-y-0 md:space-x-2 lg:space-x-4 col-span-2 flex flex-col md:flex-row md:items-baseline'>
-              <span className='font-semibold'>Border Countries:</span>
+              <span className='font-semibold xl:whitespace-nowrap'>
+                Border Countries:
+              </span>
               <div className='grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2'>
                 {borders &&
                   borders.map((country) => (
                     <Link
-                      to={`country/${country.toLowerCase()}`}
+                      to={`/country/${country.toLowerCase()}`}
                       key={country}
                       className='btn flex justify-center items-center rounded'
                       state={item}

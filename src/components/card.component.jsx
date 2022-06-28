@@ -36,7 +36,7 @@ const Card = ({ item, state }) => {
       </div>
       <div className='self-end mt-auto w-full'>
         <Link
-          to={`country/${cca3.toLowerCase()}`}
+          to={`/country/${cca3.toLowerCase()}`}
           state={state}
           className='btn'
         >

@@ -11,7 +11,7 @@ const Searchbar = ({ keyWord, setKeyWord }) => {
         type='text'
         placeholder='Search for a country...'
         value={keyWord}
-        onChange={(e) => setKeyWord(e.target.value)}
+        onChange={(e) => setKeyWord(e.target.value.trim())}
         className='w-full placeholder:text-input-light dark:placeholder:text-dark-text bg-light-element dark:bg-dark-element py-4 pl-20 pr-8 shadow-md relative rounded-lg'
       />
       <svg
