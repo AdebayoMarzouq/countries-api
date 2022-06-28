@@ -11,6 +11,9 @@
 # production
 /build
 
+#
+./rest-countries-api-with-color-theme-switcher-master
+
 # misc
 .DS_Store
 .env.local

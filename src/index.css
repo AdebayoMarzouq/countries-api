@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply bg-light-element dark:bg-dark-element rounded-lg overflow-hidden shadow-md relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.lock {
+  @apply max-w-screen-xl mx-auto px-4 md:px-8;
+}
+
+.btn {
+  @apply bg-light-element dark:bg-dark-element px-6 py-1 shadow-md flex justify-center items-center rounded border dark:border-dark-bg;
+}
+
+@layer base {
+  [type='text'],
+  [type='search'],
+  select {
+    @apply w-full border-0 shadow-md rounded focus:border-none focus:ring-0 focus:outline-none;
+  }
 }
