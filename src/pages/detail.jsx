@@ -5,10 +5,14 @@ import Button from '../components/button.component'
 import { useGlobalContext } from '../context'
 
 const Detail = () => {
-  const { data } = useGlobalContext()
+  const here = useGlobalContext()
   const { countryid } = useParams()
 
-  const detail = (id) => data.find((item) => item.cca3 === id.toUpperCase())
+  console.log(here)
+  console.log(countryid)
+
+  const detail = (id) =>
+    here.data.find((item) => item.cca3 === id.toUpperCase())
 
   const fillData = detail(countryid)
 
@@ -110,7 +114,7 @@ const Detail = () => {
                     <Link
                       to={`/country/${country.toLowerCase()}`}
                       key={country}
-                      className='btn flex justify-center items-center rounded'
+                      className='btn flex justify-center items-center rounded hover:scale-105 transition duration-300 ease-in-out delay-100'
                     >
                       {country}
                     </Link>

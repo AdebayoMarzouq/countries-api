@@ -12,7 +12,7 @@ const Card = ({ item }) => {
 
   return (
     <Link to={`/country/${cca3.toLowerCase()}`}>
-      <div className='card hover:shadow-lg flex flex-col h-full'>
+      <div className='card hover:shadow-lg flex flex-col h-full hover:scale-105 hover:transition-transform hover:duration-700 hover:ease-in-out'>
         <img
           src={aflag}
           alt={aname}

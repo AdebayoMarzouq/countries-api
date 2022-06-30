@@ -21,6 +21,7 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState({ a: false, b: '' })
 
   useEffect(() => {
+    console.log('triggered')
     axios('https://restcountries.com/v3.1/all')
       .then((response) => {
         if (response.status === 200) {
