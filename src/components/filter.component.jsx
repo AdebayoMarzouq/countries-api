@@ -3,7 +3,10 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
 
-const Filter = ({ categories, setRegion }) => {
+import { useGlobalContext } from '../context'
+
+const Filter = () => {
+  const { cat: categories, setRegion } = useGlobalContext()
   const [selected, setSelected] = useState(categories[0])
 
   return (
@@ -11,7 +14,7 @@ const Filter = ({ categories, setRegion }) => {
       value={selected}
       onChange={(value) => {
         setSelected(value)
-        setRegion(value === 'Filter by Region' ? '' : value)
+        setRegion(value === 'Filter by Region' || value === 'All' ? '' : value)
       }}
     >
       <div className='relative'>

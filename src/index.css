@@ -4,12 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.color {
+  @apply text-light-text bg-light-bg dark:text-dark-text dark:bg-dark-bg font-body;
+}
 .card {
   @apply bg-light-element dark:bg-dark-element rounded-lg overflow-hidden shadow-md relative;
 }
 
 .lock {
-  @apply max-w-screen-xl mx-auto px-4 md:px-8;
+  @apply max-w-screen-max mx-auto;
 }
 
 .btn {

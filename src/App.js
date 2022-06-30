@@ -1,7 +1,7 @@
-import Home from './pages/home'
-import Main from './pages/app'
-import Detail from './pages/detail'
-import Error from './pages/error.jsx'
+import Home from './pages/Home'
+import Main from './pages/Main'
+import Detail from './pages/Detail'
+import Error from './pages/Error.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {

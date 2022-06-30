@@ -6,11 +6,13 @@ import Header from '../components/header.component'
 
 const Main = () => {
   return (
-    <div className='text-light-text bg-light-bg dark:text-dark-text dark:bg-dark-bg font-body min-h-screen'>
+    <div className='color'>
       <Header />
-      <div className='lg:-mb-40 lg:pb-12'>
-        <Outlet />
-      </div>
+      <main>
+        <section className='lock min-h-[calc(100vh-5rem)] md:min-h-[calc(100vh-6rem)] px-8 py-8'>
+          <Outlet />
+        </section>
+      </main>
     </div>
   )
 }

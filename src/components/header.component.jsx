@@ -10,13 +10,13 @@ const Header = () => {
 
   return (
     <>
-      <header className='h-20 md:h-24 py-7 md:scroll-py-28 bg-light-element dark:bg-dark-element shadow-xl'>
-        <div className='lock flex justify-between items-center'>
+      <header className='h-20 md:h-24 py-7 md:scroll-py-28 bg-light-element dark:bg-dark-element font-body text-light-text dark:text-dark-text shadow-lg'>
+        <div className='lock px-8 flex justify-between items-center'>
           <h1 className='font-bold md:text-xl select-none'>
             Where in the world?
           </h1>
           <button
-            className='flex items-center space-x-2'
+            className='flex items-center space-x-2 hover:transform scale'
             onClick={toggleDarkMode}
           >
             <svg

@@ -1,16 +1,16 @@
 import React from 'react'
-import { useParams, useLocation, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import Button from '../components/button.component'
+import { useGlobalContext } from '../context'
 
 const Detail = () => {
+  const { data } = useGlobalContext()
   const { countryid } = useParams()
-  const location = useLocation()
-  const item = location.state
 
-  const detail = (id) => item.find((item) => item.cca3 === id.toUpperCase())
+  const detail = (id) => data.find((item) => item.cca3 === id.toUpperCase())
 
-  const data = detail(countryid)
+  const fillData = detail(countryid)
 
   const {
     name,
@@ -24,7 +24,7 @@ const Detail = () => {
     languages,
     capital,
     borders,
-  } = data
+  } = fillData
 
   const aname = name?.official
   const bname = Object.values(name?.nativeName)[0].official
@@ -39,8 +39,8 @@ const Detail = () => {
   }
 
   return (
-    <section className='md:mb-0 pb-14 md:pb-0 mt-12 md:mt-16'>
-      <div className='lock space-y-16 md:mb-0'>
+    <>
+      <div className='space-y-16 md:mb-0'>
         <div className='w-32'>
           <Button title='Back' />
         </div>
@@ -58,7 +58,7 @@ const Detail = () => {
           </div>
           <div className='flex flex-col space-y-8 md:grid md:grid-cols-2 xl:col-span-3 md:my-8 xl:ml-12'>
             <div className='col-span-2'>
-              <h1 className='font-bold text-xl'>{aname}</h1>
+              <h2 className='font-bold text-xl'>{aname}</h2>
             </div>
             <div className='space-y-3'>
               <p>
@@ -111,7 +111,6 @@ const Detail = () => {
                       to={`/country/${country.toLowerCase()}`}
                       key={country}
                       className='btn flex justify-center items-center rounded'
-                      state={item}
                     >
                       {country}
                     </Link>
@@ -121,7 +120,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   )
 }
 
