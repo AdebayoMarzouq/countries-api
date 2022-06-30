@@ -17,7 +17,6 @@ const Card = ({ item }) => {
           src={aflag}
           alt={aname}
           className='w-full h-52 object-cover border-b dark:border-b-0'
-          lazyloading='true'
         />
         <div className='px-8 pt-6 pb-4 space-y-4'>
           <h2 className='font-bold text-2xl'>{aname}</h2>
